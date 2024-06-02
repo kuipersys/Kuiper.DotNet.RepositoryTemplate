@@ -1,10 +1,17 @@
 name: Build & Test
 
 on:
+  workflow_dispatch:
+  
+  schedule:
+    - cron: '30 6 * * *'
   push:
     branches: [ "main", "develop", "next", "next-major" ]
   pull_request:
     branches: [ "main", "develop" ]
+
+env:
+  DOTNET_VERSION: 8.0.301
 
 jobs:
 
@@ -41,7 +48,7 @@ jobs:
     - name: Install .NET Core
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
+        dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Restore Packages
       run: dotnet restore
