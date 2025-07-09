@@ -13,9 +13,6 @@
     <Deterministic>true</Deterministic>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
 
-    <!-- For code analysis rules -->
-    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/Kuiper.ruleset</CodeAnalysisRuleSet>
-
     <!-- Don't expose experimental features -->
     <ExposeExperimentalFeatures Condition="'$(ExposeExperimentalFeatures)' == ''">false</ExposeExperimentalFeatures>
 
