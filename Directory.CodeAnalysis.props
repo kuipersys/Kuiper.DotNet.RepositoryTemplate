@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <!-- For code analysis rules -->
+    <CodeAnalysisRuleSet>$(MSBuildThisFileDirectory)/Kuiper.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- For code analysis rules -->
+    <AdditionalFiles Include="$(MSBuildThisFileDirectory)stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+</Project>

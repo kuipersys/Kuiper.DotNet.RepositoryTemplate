@@ -1,0 +1,36 @@
+<Project>
+  <!-- Nuget Package Configuration -->
+  <PropertyGroup>
+    <RepositoryUrl>https://github.com/tsharp/XArch.StructuredMarkdown</RepositoryUrl>
+    <Description>XArch.StructuredMarkdown</Description>
+
+    <Authors>Travis Sharp</Authors>
+    <Copyright>© Travis Sharp. All rights reserved.</Copyright>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+
+  <!-- ICON -->
+  <ItemGroup Condition="Exists('$(EnlistmentRoot)\icon.png')">
+    <None Include="$(EnlistmentRoot)\icon.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+  <PropertyGroup Condition="Exists('$(EnlistmentRoot)\icon.png')">
+    <PackageIcon>icon.png</PackageIcon>
+  </PropertyGroup>
+
+  <!-- README -->
+  <ItemGroup Condition="Exists('$(EnlistmentRoot)\README.md')">
+    <None Include="$(EnlistmentRoot)\README.md" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+  <PropertyGroup Condition="Exists('$(EnlistmentRoot)\README.md')">
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <!-- LICENSE -->
+  <ItemGroup Condition="'$(PackageLicenseExpression)' == '' and Exists('$(EnlistmentRoot)\LICENSE')">
+    <None Include="$(EnlistmentRoot)\LICENSE" Pack="true" PackagePath="\"/>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(PackageLicenseExpression)' == '' and Exists('$(EnlistmentRoot)\LICENSE')">
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+  </PropertyGroup>
+</Project>
