@@ -19,6 +19,9 @@
     <!-- Use Lock File for Restores -->
     <!-- https://devblogs.microsoft.com/nuget/enable-repeatable-package-restores-using-a-lock-file/ -->
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+
+    <!-- Always Use The Latest Language Version -->
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <!-- Build Versioning -->
